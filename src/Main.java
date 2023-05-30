@@ -1,89 +1,79 @@
 public class Main {
     public static void main(String[] args) {
         //task1
-        int clientOS = 1;
-        if (clientOS == 0) {
+        int clientOS = 0;
+        int iOs = 0;
+        int android = 1;
+        if (clientOS == iOs) {
             System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientOS == android) {
+            System.out.println("Установите версию приложения для Android по ссылке");
         } else {
-            System.out.println("Установите версию приложения для Android по ссылке");
+            System.out.println("ОС не поддерживается.");
         }
+
         //task2
-        int yearOfIssue = 2016;
-        if (clientOS == 0 && yearOfIssue < 2015) {
+        int checkYear = 2015;
+        int yearOfIssue = 2015;
+        if (clientOS == iOs && yearOfIssue < checkYear) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (clientOS == 0 && yearOfIssue > 2015) {
+        } else if (clientOS == iOs && yearOfIssue >= checkYear) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (clientOS == 1 && yearOfIssue < 2015) {
+        } else if (clientOS == android && yearOfIssue < checkYear) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (clientOS == 1 && yearOfIssue > 2015) {
+        } else if (clientOS == android && yearOfIssue >= checkYear) {
             System.out.println("Установите версию приложения для Android по ссылке");
+        } else {
+            System.out.println("ОС не поддерживается.");
         }
         //task3
         int year = 2012;
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println(year + " год является високосным");
-        }else{
+        } else {
             System.out.println(year + " год не является високосным");
         }
         //task4
-        int deliveryDistance = 110;
-        if(deliveryDistance <= 20){
-            System.out.println( "Потребуется дней: "+ 1 + ".");
-        }
-        else if(deliveryDistance > 20 && deliveryDistance < 60){
-            System.out.println( "Потребуется дней: " + 2 + ".");
-        }
-        else if(deliveryDistance > 60 && deliveryDistance < 100){
-            System.out.println( "Потребуется дней: " + 3 + ".");
+        int delivery = 1;
+        int deliveryDistance = 90;
+        if (deliveryDistance <= 20) {
+            System.out.println("Потребуется дней: " + delivery);
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            System.out.println("Потребуется дней: " + (delivery + 1));
+        } else if (deliveryDistance > 60 && deliveryDistance < 100) {
+            System.out.println("Потребуется дней: " + (delivery + 2));
 
-        }else{
+        } else {
             System.out.println("Доставки нет.");
         }
 
 
-
         //task5
-        int monthNumber = 11;
-        switch(monthNumber){
+        int monthNumber = 4;
+        switch (monthNumber) {
             case 1:
-                System.out.println("Январь");
-                break;
             case 2:
-                System.out.println("Февраль");
+            case 12:
+                System.out.println("Зима");
                 break;
             case 3:
-                System.out.println("Март");
-                break;
             case 4:
-                System.out.println("Апрель");
-                break;
             case 5:
-                System.out.println("Май");
+                System.out.println("Весна");
                 break;
             case 6:
-                System.out.println("Июнь");
-                break;
             case 7:
-                System.out.println("Июль");
-                break;
             case 8:
-                System.out.println("Август");
+                System.out.println("Лето");
                 break;
             case 9:
-                System.out.println("Сентябрь");
-                break;
             case 10:
-                System.out.println("Октябрь");
-                break;
             case 11:
-                System.out.println("Ноябрь");
-                break;
-            case 12:
-                System.out.println("Декабрь");
+                System.out.println("Осень");
                 break;
             default:
                 System.out.println("Номер месяца больше 12");
         }
 
-}
     }
+}
